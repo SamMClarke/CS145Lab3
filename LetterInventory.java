@@ -79,4 +79,31 @@ public class LetterInventory
         }
         return returnString + "]";
     }
+
+    public LetterInventory add(LetterInventory other)
+    {
+        return new LetterInventory(this.toString() + other.toString());
+    }
+
+    public LetterInventory subtract(LetterInventory other)
+    {
+        int countSub;
+        String newString = "";
+        for (int i = 0; i < count.length; i++)
+        {
+            countSub = this.get(getLetterOf(i)) - other.get(getLetterOf(i));
+            if (countSub < 0)
+            {
+                return null;
+            }
+            else
+            {
+                for (int j = 0; j < countSub; j++)
+                {
+                    newString += getLetterOf(i);
+                }
+            }
+        }
+        return new LetterInventory(newString);
+    }
 }
