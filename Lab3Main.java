@@ -1,3 +1,13 @@
+/*
+Authors: Sam Clarke, Nick Ivancovich, Jeong Gyu Tak
+Date: 1/29/2024
+Class: CS 145
+Assignment: Lab #3: Letter Inventory
+File: Lab3Main.java
+Source: Deitel / Deitel
+Purpose: Creates a letter inventory class that can be manipulated by the user
+*/
+
 public class Lab3Main
 {
     public static void main(String[] args)
@@ -23,10 +33,12 @@ public class Lab3Main
         }
 
         //Test toString method
+        System.out.println("\n Test toString method");
         LetterInventory invThree = new LetterInventory("Hi, This is fun!");
         System.out.println(invThree);
 
         //Test add and subtract methods
+        System.out.println("\nTest add and subtract methods");
         LetterInventory invFour = new LetterInventory("abcabcabc");
         LetterInventory invFive = new LetterInventory("abcabc");
         
