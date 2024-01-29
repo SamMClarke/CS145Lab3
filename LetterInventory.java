@@ -34,7 +34,7 @@ public class LetterInventory
         return true;
     }
 
-    public int get(char letter) throws IllegalArgumentException
+    public int get(char letter)
     {
         if (!isValidLetter(letter))
         {
@@ -43,7 +43,7 @@ public class LetterInventory
         return count[getIndexOf(letter)];
     }
 
-    public void set(char letter, int value) throws IllegalArgumentException
+    public void set(char letter, int value)
     {
         if (!isValidLetter(letter) || value < 0)
         {
@@ -87,23 +87,28 @@ public class LetterInventory
 
     public LetterInventory subtract(LetterInventory other)
     {
-        int countSub;
+        int[] newCount = new int[26];
+        int subValue;
         String newString = "";
+
         for (int i = 0; i < count.length; i++)
         {
-            countSub = this.get(getLetterOf(i)) - other.get(getLetterOf(i));
-            if (countSub < 0)
+            subValue = this.get(getLetterOf(i)) - other.get(getLetterOf(i));
+            if (subValue < 0)
             {
                 return null;
             }
-            else
+            newCount[i] = subValue;
+        }
+
+        for (int i = 0; i < newCount.length; i++)
+        {
+            for (int j = 0; j < newCount[i]; j++)
             {
-                for (int j = 0; j < countSub; j++)
-                {
-                    newString += getLetterOf(i);
-                }
+                newString += getLetterOf(i);
             }
         }
+
         return new LetterInventory(newString);
     }
 }
