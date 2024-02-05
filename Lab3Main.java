@@ -5,7 +5,7 @@ Class: CS 145
 Assignment: Lab #3: Letter Inventory
 File: Lab3Main.java
 Source: Deitel / Deitel
-Purpose: Creates a letter inventory class that can be manipulated by the user
+Purpose: Creates a letter inventory class that can be manipulated by the user~~
 */
 
 public class Lab3Main
